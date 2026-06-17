@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O - Level Pakistani Studies Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- n8n Chat Widget Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <!-- Google Fonts (Inter & Playfair Display for premium typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pakgreen: {
+                            50: '#eefcf4',
+                            100: '#d5f7e3',
+                            500: '#006633', // Official Pakistan Flag Green
+                            600: '#005229',
+                            700: '#003d1f',
+                            800: '#012c17',
+                        },
+                        pakgold: {
+                            100: '#fef9e7',
+                            200: '#fdf1c4',
+                            500: '#C5A85C', // Premium Satin Gold Accent
+                            600: '#b0914c',
+                            700: '#8e7235',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* n8n Chatbot Custom Variables */
+        :root {
+            --n8n-chat-primary-color: #006633 !important;
+            --n8n-chat-light-primary-color: #eff6ff !important;
+        }
+
+        /* Custom smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00663344;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00663377;
+        }
+        /* Custom Styles for active categories and hover animations */
+        .category-chip {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chapter-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chapter-card:hover {
+            transform: translateY(-4px);
+        }
+
+        :root {
+            --n8n-chat-primary-color: #006633 !important;
+            --n8n-chat-light-primary-color: #eff6ff !important;
+        }
+
+        /* Customize n8n chat button to match the premium guide UI theme (forces match for image_464c4d.png) */
+        .n8n-chat-button,
+        div.n8n-chat-button,
+        button.n8n-chat-button,
+        [class*="n8n-chat-button"] {
+            background-color: #006633 !important;
+            background: #006633 !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 102, 51, 0.3), 0 4px 6px -4px rgba(0, 102, 51, 0.3) !important;
+            transition: all 0.2s ease-in-out !important;
+            border: 2px solid #ffffff !important;
+            z-index: 9999 !important;
+        }
+
+        .n8n-chat-button:hover,
+        [class*="n8n-chat-button"]:hover {
+            transform: scale(1.05) !important;
+            opacity: 0.95 !important;
+            background-color: #005229 !important;
+            background: #005229 !important;
+        }
+
+        /* Customize n8n dialog panel corners */
+        .n8n-chat-dialog {
+            border-radius: 24px !important;
+            overflow: hidden !important;
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+            z-index: 10000 !important;
+        }
+
+        /* Floating Action Group Stack (combining checklist with n8n button) */
+        #mobile-checklist-fab {
+            position: fixed !important;
+            bottom: 96px !important; /* Positions it directly above the chatbot trigger */
+            right: 24px !important;
+            z-index: 9999 !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 102, 51, 0.2), 0 4px 6px -4px rgba(0, 102, 51, 0.2) !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen selection:bg-pakgreen-100 selection:text-pakgreen-800">
+
+    <script>
+        // High-Quality Syllabus Database according to Cambridge 0448 Curriculum - Fully Expanded to 16 Chapters
+        const SYLLABUS_DATA = [
+            {
+                id: "hist-01",
+                category: "history",
+                chapterNum: "Chapter 1",
+                paper: "Paper 1: Section 1",
+                title: "Sir Syed Ahmad Khan & the Aligarh Movement",
+                subtitle: "The socio-political renaissance of Muslims in the subcontinent post-1857.",
+                summary: "Following the War of Independence in 1857, South Asian Muslims faced severe British reprisal. Sir Syed Ahmad Khan pioneered a multi-pronged reform movement to restore educational, social, and political standing through modern scientific education and reconciliation with British authorities.",
+                image: "https://images.unsplash.com/photo-1590076247564-a28b36740935?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Formulation of the Two-Nation Theory based on cultural preservation.",
+                    "Establishment of the Scientific Society (1863) and MAO College at Aligarh (1875).",
+                    "The Urdu-Hindi Controversy (1867) as a turning point in Hindu-Muslim relations.",
+                    "Pamphlet 'Asbab-e-Baghawat-e-Hind' (Causes of the Indian Revolt) to clear Muslim blame."
+                ],
+                keyDates: [
+                    { date: "1857", event: "War of Independence causes British-Muslim trust rift." },
+                    { date: "1875", event: "MAO High School established, upgrading to College in 1877." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Educational Strategy & Aligarh College</h4>
+                    <p class="mb-4">Sir Syed believed that Muslims could not progress without acquiring Western scientific education. He established school facilities in Muradabad (1859), Ghazipur (1862), and eventually the Muhammadan Anglo-Oriental (MAO) College in Aligarh in 1875, which became the intellectual engine of the Pakistan Movement.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. The Two-Nation Theory</h4>
+                    <p class="mb-4">Originally a proponent of joint Hindu-Muslim cooperation, the Hindi-Urdu controversy of 1867 in Benares convinced Sir Syed that the two communities would never comfortably merge into a single nation. He advocated separate political tracks for Muslims to protect their language, culture, and electoral representation.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Explain why Sir Syed Ahmad Khan founded the Aligarh Movement. (7 marks)",
+                    markingScheme: "Level 3: Identifies and explains multiple reasons, such as improving British relations to safeguard Muslim interests, uplifting social/economic status through Western scientific learning, and political protection in response to Urdu-Hindi controversy."
+                }
+            },
+            {
+                id: "hist-02",
+                category: "history",
+                chapterNum: "Chapter 2",
+                paper: "Paper 1: Section 1",
+                title: "Religious Reformers of South Asia",
+                subtitle: "The services of Shah Waliullah, Syed Ahmad Barelvi, and Haji Shariatullah.",
+                summary: "The decline of Islamic rule led to religious, social, and political degradation. Three key reformers emerged: Shah Waliullah translated the Quran into Persian; Syed Ahmad Barelvi launched the armed Jihad Movement; Haji Shariatullah initiated the Faraizi Movement in Bengal.",
+                image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Shah Waliullah's translation of the Holy Quran to make it accessible to common Muslims.",
+                    "Battle of Balakot (1831) and the martyrdom of Syed Ahmad Barelvi.",
+                    "The Faraizi Movement's emphasis on Islamic duties ('Faraiz') and peasant rights.",
+                    "Unification of sectarian factions in the Muslim community."
+                ],
+                keyDates: [
+                    { date: "1703-1762", event: "Lifespan of Shah Waliullah, leading intellectual revival." },
+                    { date: "1831", event: "Syed Ahmad Barelvi falls at Balakot fighting Sikh forces." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Shah Waliullah (1703–1762)</h4>
+                    <p class="mb-4">Believed sectarian division was the root of Muslim weakness. He translated the Holy Quran into Persian (the literary language of the day) and invited Afghan ruler Ahmad Shah Abdali to defeat the Marathas at the Third Battle of Panipat (1761).</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Syed Ahmad Barelvi & the Mujahideen</h4>
+                    <p class="mb-4">The first reformer to initiate a structured military campaign (Jihad Movement) to liberate Muslims of Punjab and NWFP from Sikh oppression, resulting in the heroic stand at Balakot in 1831.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why was the Jihad Movement of Syed Ahmad Barelvi unsuccessful? (7 marks)",
+                    markingScheme: "Level 3: Explains reasons, including the betrayal by local tribal chiefs, lack of unified military training among the Mujahideen, Sikh superiority in weaponry, and tactical mistakes near Balakot."
+                }
+            },
+            {
+                id: "hist-03",
+                category: "history",
+                chapterNum: "Chapter 3",
+                paper: "Paper 1: Section 1",
+                title: "The War of Independence 1857 & Decline of the Mughals",
+                subtitle: "The tipping point of British colonisation and end of the Mughal Empire.",
+                summary: "The direct collision between Indian soldiers and British East India Company forces. Sparked by grievances over the grease of Enfield rifle cartridges, religious interference, and high taxation, it marked the formal transfer of power to the British Crown.",
+                image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Introduction of greased cartridges suspected of containing pork/beef fat.",
+                    "Doctrine of Lapse used by Lord Dalhousie to annex native states like Oudh.",
+                    "Exile of Bahadur Shah Zafar II, bringing a formal end to the Mughal Dynasty.",
+                    "The Government of India Act 1858 transferring power directly to the Crown."
+                ],
+                keyDates: [
+                    { date: "May 1857", event: "Sepoy mutiny starts at Meerut, spreading rapidly to Delhi." },
+                    { date: "1858", event: "Proclamation of Queen Victoria; East India Company dissolved." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Causes of the Revolt</h4>
+                    <p class="mb-4">The uprising stemmed from long-term political humiliation (Doctrine of Lapse), economic exploitation, cultural alienation, and the immediate trigger of Enfield rifle cartridges greased with animal fats offensive to both Hindus and Muslims.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Consequences for Muslims</h4>
+                    <p class="mb-4">The British held Muslims primarily responsible for the rebellion. This resulted in targeted persecution, exclusion from civil services, confiscation of properties, and a deep socio-economic decline.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Was the grease of the cartridges the most important cause of the War of Independence? Explain. (14 marks)",
+                    markingScheme: "Level 4: Evaluates both sides. Explains the cartridge issue as the critical immediate trigger, but contrasts this with deep-seated political, social, and economic grievances (Doctrine of Lapse, high land tax, missionary activity) to offer a balanced judgment."
+                }
+            },
+            {
+                id: "pol-01",
+                category: "politics",
+                chapterNum: "Chapter 4",
+                paper: "Paper 1: Section 2",
+                title: "The Simla Deputation & Founding of the Muslim League",
+                subtitle: "The start of organised constitutional representation for Indian Muslims.",
+                summary: "In 1906, a delegation of Muslim leaders met Viceroy Lord Minto to demand separate electorates. The successful encounter boosted confidence and led directly to the founding of the All-India Muslim League in Dhaka on December 30, 1906.",
+                image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Partition of Bengal (1905) and subsequent Hindu protests (Swadeshi Movement).",
+                    "Simla Deputation led by Sir Aga Khan demanding representation based on political importance.",
+                    "Establishment of the Muslim League at Ahsan Manzil Palace, Dhaka.",
+                    "The inclusion of Separate Electorates in the Minto-Morley Reforms of 1909."
+                ],
+                keyDates: [
+                    { date: "Oct 1906", event: "Simla Deputation meets Viceroy Minto." },
+                    { date: "Dec 1906", event: "All-India Muslim League is formally established." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The Need for Political Organisation</h4>
+                    <p class="mb-4">With the Indian National Congress opposing the partition of Bengal and advocating joint electorates, Muslims feared they would be politically overwhelmed in a Hindu-majority system. A dedicated Muslim platform was deemed crucial to express loyalties and demands to the British.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Separate Electorates</h4>
+                    <p class="mb-4">This mechanism ensured Muslims voted only for Muslim candidates. It protected minority representations in provincial and central councils and set the structural path toward the eventual demand for a separate state.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why was the Muslim League founded in 1906? (7 marks)",
+                    markingScheme: "Level 3: Explains multiple factors, including Hindu opposition to the Partition of Bengal, the success of the Simla Deputation, the need to counter Congress's growing influence, and the desire to safeguard Muslim political interests."
+                }
+            },
+            {
+                id: "pol-02",
+                category: "politics",
+                chapterNum: "Chapter 5",
+                paper: "Paper 1: Section 2",
+                title: "The Khilafat Movement & Lucknow Pact",
+                subtitle: "The peak and subsequent fracture of Hindu-Muslim unity (1916–1924).",
+                summary: "A brief but passionate era of joint Hindu-Muslim political activism. The Lucknow Pact (1916) saw Congress accept separate electorates, while the Khilafat Movement (1919-1924) sought to protect the Ottoman Caliphate against British post-WWI partitions.",
+                image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "The Lucknow Pact (1916) brokered by Quaid-e-Azam Muhammad Ali Jinnah.",
+                    "The Khilafat Committee led by Maulana Shaukat Ali and Maulana Mohammad Ali Johar.",
+                    "Gandhi's Non-Cooperation Movement uniting with the Khilafat campaign.",
+                    "The tragedy of the Hijrat Movement and the Chauri Chaura incident."
+                ],
+                keyDates: [
+                    { date: "1916", event: "Lucknow Pact signed, naming Jinnah 'Ambassador of Hindu-Muslim Unity'." },
+                    { date: "1924", event: "Mustafa Kemal Ataturk abolishes the Caliphate, ending the movement." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The Lucknow Pact (1916)</h4>
+                    <p class="mb-4">The absolute high-water mark of communal cooperation. Congress conceded separate electorates to Muslims, and both parties jointly demanded self-government from the British authorities.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Why the Khilafat Movement Failed</h4>
+                    <p class="mb-4">The movement collapsed due to internal divisions, the tragic Chauri Chaura violence which made Gandhi call off the non-cooperation strike, and ultimately, Turkey itself abolishing the Caliphate in 1924.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Explain why the Khilafat Movement failed. (7 marks)",
+                    markingScheme: "Level 3: Explains multiple reasons: Gandhi's sudden withdrawal following Chauri Chaura, the ill-advised Hijrat to Afghanistan leaving thousands destitute, and Ataturk's abolition of the Caliphate, rendering the movement obsolete."
+                }
+            },
+            {
+                id: "pol-03",
+                category: "politics",
+                chapterNum: "Chapter 6",
+                paper: "Paper 1: Section 2",
+                title: "The Road to Partition (1940-1947)",
+                subtitle: "From the Lahore Resolution to the birth of Pakistan.",
+                summary: "The final phase of the struggle for independence. Spurred by Jinnah's 14 Points and the failures of the 1937 provincial coalitions, the Muslim League adopted the Lahore Resolution in 1940, demanding independent states for Muslims, culminating in the Partition on August 14, 1947.",
+                image: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "The Lahore (Pakistan) Resolution on March 23, 1940, at Minto Park.",
+                    "The Cripps Mission (1942) and Gandhi-Jinnah Talks (1944).",
+                    "The land-slide victory of the Muslim League in the 1945-46 General Elections.",
+                    "The Cabinet Mission Plan (1946) and the June 3rd Partition Plan."
+                ],
+                keyDates: [
+                    { date: "23 Mar 1940", event: "A.K. Fazlul Huq presents the historic Lahore Resolution." },
+                    { date: "14 Aug 1947", event: "Pakistan emerges on the world map as a sovereign nation." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The 1945-46 Elections: The Ultimate Referendum</h4>
+                    <p class="mb-4">The Muslim League won 100% of the seats reserved for Muslims in the Central Assembly and nearly 87% in the Provincial Assemblies, proving beyond doubt that the League was the sole representative of the subcontinent's Muslims.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. The Cabinet Mission (1946)</h4>
+                    <p class="mb-4">A last-ditch British attempt to preserve Indian unity via a three-tiered federated structure. Though accepted initially by both Congress and the League, statements by Nehru on modifying the plan led Jinnah to withdraw and call for 'Direct Action Day'.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why was the Lahore Resolution of 1940 so important? (7 marks)",
+                    markingScheme: "Level 3: Explains reasons: It marked the formal abandonment of a federal Indian solution, consolidated the goal of the Muslim League toward a separate state, and provided a clear, unifying rallying cry for Muslims."
+                }
+            },
+            {
+                id: "pol-04",
+                category: "politics",
+                chapterNum: "Chapter 7",
+                paper: "Paper 1: Section 3",
+                title: "Early Administrative & Political Problems (1947-1948)",
+                subtitle: "The fragile birth of a state and the trials of the Quaid.",
+                summary: "Upon independence, Pakistan faced immediate existential threats: the influx of 8 million refugees, the division of military and financial assets, disputes over princely states (Kashmir, Junagadh, Hyderabad), the Canal Water dispute, and the sudden death of Jinnah.",
+                image: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "The critical refugee crisis and setting up of relief camps in Lahore.",
+                    "The withholding of Pakistan's financial assets (Rs 750 million) by India.",
+                    "The Kashmir war of 1947-48 leading to UN ceasefire intervention.",
+                    "The Radcliff Boundary Award controversies and the loss of Gurdaspur."
+                ],
+                keyDates: [
+                    { date: "Sep 1947", event: "Refugee Crisis peaks; Quaid moves his headquarters to Lahore." },
+                    { date: "11 Sep 1948", event: "Quaid-e-Azam Muhammad Ali Jinnah passes away." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The Division of Assets</h4>
+                    <p class="mb-4">Pakistan was promised 17.5% of the cash assets of undivided India, amounting to Rs 750 million. India initially delayed payment, releasing only a portion after Mahatma Gandhi went on a hunger strike protesting the delay.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. The Canal Water Dispute</h4>
+                    <p class="mb-4">In April 1948, the East Punjab government (India) shut off water flowing to West Punjab's canals, threatening Pakistan's agricultural core. This was temporarily resolved but required the 1960 Indus Waters Treaty for a permanent settlement.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Explain why the refugee crisis was a major problem for the new government of Pakistan. (7 marks)",
+                    markingScheme: "Level 3: Explains impact. Over 8 million refugees arrived destitute, needing food, shelter, healthcare, and jobs. This completely overwhelmed the administrative machinery of the new capital and provinces, threatening to bankrupt the infant state."
+                }
+            },
+            {
+                id: "pol-05",
+                category: "politics",
+                chapterNum: "Chapter 8",
+                paper: "Paper 1: Section 3",
+                title: "The Ayub Khan Era & the 1965 War",
+                subtitle: "Martial Law, land reforms, and foreign policy shifts.",
+                summary: "Following political instability, Gen. Ayub Khan took power in 1958. He introduced 'Basic Democracies', shifted the capital to Islamabad, implemented green revolution land reforms, and led the country through the high-stakes 1965 war with India.",
+                image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "1958: Declaration of the first country-wide Martial Law.",
+                    "System of Basic Democracies (80,000 electoral college members).",
+                    "The relocation of the capital from Karachi to Islamabad.",
+                    "The 1965 War: Key operations (Gibraltar and Grand Slam)."
+                ],
+                keyDates: [
+                    { date: "1958", event: "Ayub Khan forces President Iskander Mirza out." },
+                    { date: "Sep 1965", event: "17-day war with India concludes with the Tashkent Declaration." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Economic 'Decade of Development'</h4>
+                    <p class="mb-4">Ayub Khan's era saw rapid industrialization, the construction of major dams (Mangla), and a massive boost in crop yields due to high-yielding seed varieties and canal lining under the Green Revolution.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. The 1965 War & Tashkent Declaration</h4>
+                    <p class="mb-4">Tensions over Kashmir led to a full-scale conventional war. Soviet mediation resulted in the Tashkent Agreement in January 1966, signed by Ayub Khan and Lal Bahadur Shastri, returning troops to pre-war positions.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why did Ayub Khan fall from power in 1969? (7 marks)",
+                    markingScheme: "Level 3: Explains multiple reasons: Public anger over Tashkent, rising food prices, political protests led by Z.A. Bhutto in the West and Mujibur Rahman in the East, and celebrations of 'Decade of Development' which alienated impoverished classes."
+                }
+            },
+            {
+                id: "pol-06",
+                category: "politics",
+                chapterNum: "Chapter 9",
+                paper: "Paper 1: Section 3",
+                title: "The Bhutto, Zia, and Democratic Era (1971-1999)",
+                subtitle: "Nationalisation, Islamisation, and constitutional reforms.",
+                summary: "A rollercoaster era starting with Zulfikar Ali Bhutto's social reforms and the landmark 1973 Constitution. General Zia-ul-Haq's 1977 coup ushered in deep Islamization and involvement in the Soviet-Afghan War, followed by the political rivalry of Benazir Bhutto and Nawaz Sharif in the 1990s.",
+                image: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Passing of the consensus-based 1973 Constitution of Pakistan.",
+                    "Nationalisation of major industries, banks, and schools under Z.A. Bhutto.",
+                    "Zia-ul-Haq's Hudood Ordinances and geopolitical role in the Afghan Jihad.",
+                    "1998: Pakistan's nuclear tests (Chagai-I) under Nawaz Sharif's government."
+                ],
+                keyDates: [
+                    { date: "1973", event: "Consensus parliamentary constitution is passed." },
+                    { date: "May 1998", event: "Pakistan conducts nuclear tests, establishing defense deterrence." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The 1973 Constitution</h4>
+                    <p class="mb-4">This constitution established a bicameral federal parliament, declared the Prime Minister as the head of government, and declared Pakistan an Islamic Republic. It remains the governing legal framework of the state.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Geopolitics of Zia-ul-Haq (1977-1988)</h4>
+                    <p class="mb-4">The Soviet invasion of Afghanistan in 1979 transformed Pakistan into a vital ally for Western powers. Millions of Afghan refugees entered Pakistan, and foreign aid flowed to support the resistance, deeply affecting local society.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why did Pakistan conduct nuclear tests in 1998? (7 marks)",
+                    markingScheme: "Level 3: Explains reasons: Direct response to India's Pokhran-II tests, the need to maintain strategic military balance in South Asia, and immense domestic public pressure on Nawaz Sharif's administration."
+                }
+            },
+            {
+                id: "geo-01",
+                category: "geology",
+                chapterNum: "Chapter 10",
+                paper: "Paper 2: The Land of Pakistan",
+                title: "Topography of the Indus River Basin",
+                subtitle: "An analysis of the Upper and Lower Indus Plains, active floodplains, and doabs.",
+                summary: "The Indus Basin is the lifeblood of Pakistan's agriculture. It stretches from the foothill Himalayan regions down to the Arabian Sea, featuring unique fluvial landforms including alluvial terraces (bar uplands), active floodplains, and complex deltaic structures.",
+                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Distinction between Upper (Punjab) and Lower (Sindh) Indus Plains.",
+                    "Geological composition of Doabs (alluvial land between two meeting rivers).",
+                    "Active vs. Alternative/Old Floodplains and their impact on seasonal flooding.",
+                    "Meanders, oxbow lakes, and natural levees across river pathways."
+                ],
+                keyDates: [
+                    { date: "1960", event: "Indus Waters Treaty allocates river rights between India and Pakistan." },
+                    { date: "2010", event: "Catastrophic monsoon floods reshape major geomorphological plains." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The Geomorphology of the Plains</h4>
+                    <p class="mb-4">The Indus Basin is divided into the Upper Indus Plain (characterized by doabs like Bari, Rechna, and Jech) and the Lower Indus Plain (marked by a single major channel, slower river velocity, and deltaic conditions near Karachi).</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Micro-relief Features</h4>
+                    <p class="mb-4">Key features include <strong>Doabs</strong> (alluvial plains), <strong>Active Floodplains</strong> (frequently flooded silt-deposition areas close to rivers), and <strong>Alluvial Terraces</strong> (remnants of older floodplains elevated above current levels, ideal for settlement).</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Describe the relief features of the Lower Indus Plain. (4 marks)",
+                    markingScheme: "Award 1 mark for each valid descriptive feature: Flat land sloping gently toward the Arabian Sea, presence of oxbow lakes, meanders, active floodplains, and tidal delta features at the coastline."
+                }
+            },
+            {
+                id: "geo-02",
+                category: "geology",
+                chapterNum: "Chapter 11",
+                paper: "Paper 2: The Land of Pakistan",
+                title: "Mountain Ranges of Northern & Western Pakistan",
+                subtitle: "Karakoram, Himalayas, Hindu Kush, and western dry hills.",
+                summary: "Pakistan's topography features massive high-altitude mountains in the north and lower, dry rugged ranges in the west. These influence climatic patterns, river flows, and accessibility.",
+                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Northern Ranges: Karakoram (K2), Himalayas (Nanga Parbat), Hindu Kush.",
+                    "Western Ranges: Suleiman, Kirthar, and Waziristan Hills.",
+                    "Key passes (Khyber, Bolan, Khunjerab) and their historical trade value.",
+                    "Environmental issues: soil erosion, landslides, and glacial lake outbursts (GLOF)."
+                ],
+                keyDates: [
+                    { date: "1978", event: "Karakoram Highway (KKH) opens, connecting Pakistan and China." },
+                    { date: "2005", event: "Devastating Kashmir Earthquake reshapes Northern valleys." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Northern Mountains</h4>
+                    <p class="mb-4">These ranges have an average height of over 6,000m and act as a barrier to cold winds from Central Asia while locking in moisture from monsoons, feeding the Indus river system through snowmelt.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Western Mountains</h4>
+                    <p class="mb-4">Composed of sedimentary rocks and highly fractured structures. They are largely barren, receive very low rainfall, and are characterized by deep gorges and strategic mountain passes like the Khyber Pass.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Explain how the topography of the Northern Mountains affects the economic development of the area. (6 marks)",
+                    markingScheme: "Level 3: Explains both positive and negative impacts. High relief and cold weather restrict farming and construction, making transport networks difficult and expensive. However, scenic landforms attract domestic and international tourism, and steep slopes facilitate hydroelectric power generation."
+                }
+            },
+            {
+                id: "geo-03",
+                category: "geology",
+                chapterNum: "Chapter 12",
+                paper: "Paper 2: Climate",
+                title: "The Climate of Pakistan: Monsoons & Seasons",
+                subtitle: "A detailed analysis of temperature, rainfall sources, and hazards.",
+                summary: "Pakistan's climate is continental, arid to semi-arid, with massive temperature extremes. Rainfall is dominated by the summer Southwest Monsoons and winter Western Depressions.",
+                image: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Four distinct seasons: Cold (Dec-Mar), Hot (Apr-June), Monsoon (July-Sep), Post-Monsoon.",
+                    "Sources of precipitation: Summer Monsoons, Winter Western Depressions, Thunderstorms.",
+                    "Climatic hazards: Floods, droughts, heatwaves, and tropical cyclones.",
+                    "Temperature inversion and continental climate effects."
+                ],
+                keyDates: [
+                    { date: "July 2010", event: "Unprecedented monsoon rainfall leads to the worst floods in Pakistan's history." },
+                    { date: "May 2017", event: "Turbat records 54°C, one of the highest temperatures ever recorded globally." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Southwest Monsoons (July - September)</h4>
+                    <p class="mb-4">Moisture-laden winds blowing from the Indian Ocean (Bay of Bengal and Arabian Sea) bring heavy, localized torrential downpours to the northern and eastern regions of Pakistan, critical for summer crops.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Western Depressions (December - March)</h4>
+                    <p class="mb-4">Originating in the Mediterranean Sea, these low-pressure systems travel across Iran and Afghanistan to bring valuable winter showers and high-altitude snowfall to western and northern regions.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Outline the benefits and problems caused by the Southwest Monsoon. (6 marks)",
+                    markingScheme: "Points include: Benefits: Fills water reservoirs (Tarbele/Mangla), supplies crucial water for agriculture (Kharif crops), and lowers extreme summer temperatures. Problems: Causes flash floods, soil erosion, destruction of standing crops, and disrupts urban transport networks."
+                }
+            },
+            {
+                id: "econ-01",
+                category: "economics",
+                chapterNum: "Chapter 13",
+                paper: "Paper 2: Environment",
+                title: "Agricultural Production & Irrigation Networks",
+                subtitle: "The dynamics of cash crops, canal networks, and waterlogging/salinity solutions.",
+                summary: "As an agrarian economy, Pakistan relies on the world's largest contiguous irrigation system to cultivate staple crops. However, this system faces major existential risks from water wastage, siltation, and land degradation through waterlogging.",
+                image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Major Rabi (winter) vs Kharif (summer) crop cultivation cycles.",
+                    "Canal irrigation: perennial, non-perennial, and inundation canals.",
+                    "Waterlogging and salinity (SCARP reclamation efforts and tube wells).",
+                    "The contribution of agriculture to national GDP and export revenue."
+                ],
+                keyDates: [
+                    { date: "1960s", event: "Green Revolution introduces high-yield crop seeds." },
+                    { date: "1970", event: "Tarbela Dam completed to drastically scale irrigation storage." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Irrigation Systems</h4>
+                    <p class="mb-4">Pakistan relies on <strong>Perennial Canals</strong> (supplying water year-round), <strong>Inundation Canals</strong> (flowing only when rivers are high), and indigenous <strong>Karez</strong> systems in the dry valleys of Balochistan. Secondary systems include tube wells and lift pumps.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Solving Land Degradation</h4>
+                    <p class="mb-4">Rising water tables saturate soils with salts (salinity), rendering them infertile. The Salinity Control and Reclamation Project (SCARP) deployed thousands of tube wells to lower water tables, successfully recovering millions of acres of farmland.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "State the differences between Rabi and Kharif crop seasons. (4 marks)",
+                    markingScheme: "Award marks for contrasting points: Kharif crops (cotton, rice, sugarcane) are sown in summer (April-June) and harvested in autumn (October-December). Rabi crops (wheat, barley, gram) are sown in winter (October-November) and harvested in spring (April-May)."
+                }
+            },
+            {
+                id: "econ-02",
+                category: "economics",
+                chapterNum: "Chapter 14",
+                paper: "Paper 2: Resources",
+                title: "Water Resources & The Indus Waters Treaty",
+                subtitle: "How Pakistan manages its water, reservoirs, and diplomatic agreements.",
+                summary: "Water is Pakistan's most valuable and vulnerable resource. With melting glaciers and a growing population, storing water via dams and managing international river sharing is critical for survival.",
+                image: "https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Major multipurpose dams: Tarbela, Mangla, and Warsak.",
+                    "Barrages (Sukkur, Kotri) used for water diversion into canals rather than storage.",
+                    "The Indus Waters Treaty (1960) allocating rivers with India.",
+                    "The threat of siltation reducing the capacity of major reservoirs."
+                ],
+                keyDates: [
+                    { date: "1932", event: "Sukkur Barrage completed, pioneering modern canal irrigation in Sindh." },
+                    { date: "1960", event: "Indus Waters Treaty signed, brokered by the World Bank." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Siltation: The Invisible Threat</h4>
+                    <p class="mb-4">Rivers carry vast amounts of mud and silt from deforestation in northern mountain catchments. This silt settles at the bottom of reservoirs like Tarbela, reducing their storage capacity by several million acre-feet every decade.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Dams vs. Barrages</h4>
+                    <p class="mb-4"><strong>Dams</strong> are high structures built in deep valleys to store water and generate hydroelectricity. <strong>Barrages</strong> are low structures built across wide rivers to raise the water level and divert flow into canals.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Why is the building of new large dams controversial in Pakistan? (6 marks)",
+                    markingScheme: "Level 3: Explains controversial viewpoints: Downstream provinces (like Sindh) fear water shortages and loss of fertile delta silt; local populations face mass displacement; massive financial costs; and inter-provincial trust issues."
+                }
+            },
+            {
+                id: "econ-03",
+                category: "economics",
+                chapterNum: "Chapter 15",
+                paper: "Paper 2: Industrial Development",
+                title: "Primary, Secondary, & Tertiary Industries",
+                subtitle: "A deep dive into steel, textiles, cottage industries, and services.",
+                summary: "Pakistan's industrial sector is dominated by textile manufacturing, but cottage industries still employ millions. The tertiary sector (services, IT, telecom) is the fastest-growing part of the economy.",
+                image: "https://images.unsplash.com/photo-1513829096999-4978602294fc?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "Textile industry: Pakistan's largest manufacturing and export earner.",
+                    "Cottage & Small-Scale Industries: Low investment, high rural employment.",
+                    "The role of Pakistan Steel Mills (PSM) and industrial estates.",
+                    "The shift toward tertiary services, retail, and digital telecom."
+                ],
+                keyDates: [
+                    { date: "1973", event: "Foundation of Pakistan Steel Mills laid at Pipri near Karachi." },
+                    { date: "2015", event: "CPEC (China-Pakistan Economic Corridor) launched, upgrading transport/energy networks." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. The Textile Backbone</h4>
+                    <p class="mb-4">Cotton textiles account for more than 55% of Pakistan's total export value. The sector spans the entire chain from cotton ginning, spinning, weaving, to dyeing and garment exports, mostly located in Faisalabad and Karachi.</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. Cottage Industries</h4>
+                    <p class="mb-4">These are traditional, home-based industries (sports goods in Sialkot, carpets, woodwork, pottery) using manual labor and local raw materials. They are critical for employing rural women and preserving cultural heritage.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Discuss the advantages and disadvantages of establishing small-scale and cottage industries in Pakistan. (6 marks)",
+                    markingScheme: "Level 3: Balanced evaluation. Advantages: Requires low capital, utilizes local waste/resources, provides rural employment, and reduces migration to crowded cities. Disadvantages: Hard to maintain quality control, faces tough competition from cheap foreign imports, and lacks direct access to banking credit."
+                }
+            },
+            {
+                id: "econ-04",
+                category: "economics",
+                chapterNum: "Chapter 16",
+                paper: "Paper 2: Population & Society",
+                title: "Demographics, Urbanisation, & Workforce",
+                subtitle: "Understanding Pakistan's population explosion and city expansions.",
+                summary: "With over 240 million citizens, Pakistan has a young population but faces challenges from high dependency ratios, low literacy rates, and rapid rural-to-urban migration.",
+                image: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&q=80&w=600",
+                keyPoints: [
+                    "High population growth rates and the 'youth bulge'.",
+                    "Push and pull factors driving massive rural-to-urban migration.",
+                    "Socio-economic challenges: high unemployment, katchi abadis (slums), and literacy gaps.",
+                    "Gender disparity in the national workforce."
+                ],
+                keyDates: [
+                    { date: "1947", event: "Pakistan's initial population was approximately 33 million." },
+                    { date: "2023", event: "National Census records Pakistan's population at over 241 million." }
+                ],
+                detailedNotes: `
+                    <h4 class="font-bold text-slate-900 mb-2">1. Rural-Urban Migration</h4>
+                    <p class="mb-4">People move to cities like Karachi, Lahore, and Faisalabad due to 'Push' factors (rural poverty, lack of schools, land subdivision) and 'Pull' factors (better-paying jobs, hospitals, active entertainment, and modern infrastructure).</p>
+                    <h4 class="font-bold text-slate-900 mb-2">2. The Youth Bulge</h4>
+                    <p class="mb-4">Over 60% of Pakistan's population is under the age of 30. While this offers an immense workforce potential (demographic dividend), it presents severe challenges if the state cannot provide quality technical education and jobs.</p>
+                `,
+                pastPaperQuestion: {
+                    question: "Explain why the population of Pakistan is growing so rapidly. (7 marks)",
+                    markingScheme: "Level 3: Explains reasons: High birth rates due to early marriages, religious/cultural desires for large families, lack of family planning facilities, and falling infant mortality rates due to better modern medical treatment."
+                }
+            }
+        ];
+
+        // High-Yield Flashcards database
+        const FLASHCARDS = [
+            {
+                question: "What is the primary significance of the Lucknow Pact of 1916?",
+                answer: "It was the only formal agreement where Congress and the Muslim League agreed to separate electorates, representing the peak of Hindu-Muslim political cooperation."
+            },
+            {
+                question: "Name the three major rivers that partition the Indus Basin under the 1960 Treaty.",
+                answer: "India gained rights to Eastern rivers (Ravi, Beas, Sutlej). Pakistan gained rights to Western rivers (Indus, Jhelum, Chenab)."
+            },
+            {
+                question: "Explain the main purpose of the Objectives Resolution of 1949.",
+                answer: "It laid down the foundational principles for future constitutions, stating that sovereignty belongs to Allah but is delegated to the state of Pakistan through its people as a sacred trust."
+            },
+            {
+                question: "What is waterlogging and why is it a problem in Pakistani agriculture?",
+                answer: "Unlined canals leak water, raising the local water table to the root zone, suffocating plants and depositing sterile salts on the surface through evaporation (salinity)."
+            },
+            {
+                question: "Explain the religious contribution of Shah Waliullah in the decline of Muslim power.",
+                answer: "He translated the Holy Quran into Persian, wrote 51 influential books, and united the Muslim factions, inviting Ahmad Shah Abdali to defeat the Marathas at the Battle of Panipat."
+            },
+            {
+                question: "What are the four main sources of rainfall in Pakistan?",
+                answer: "Southwest Monsoons (summer), Western Depressions (winter), Convectional Currents/Thunderstorms (early summer), and Tropical Cyclones (occasional)."
+            }
+        ];
+    </script>
+
+    <!-- Floating Action Group for Study Tools (Unified Bottom-Right Suite) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-center space-y-4">
+        <!-- Floating Mobile Checklist Toggle (image_52ecc4.png) stacked elegantly above the chatbot -->
+        <button id="mobile-checklist-fab" onclick="toggleMobileTracker()" class="lg:hidden bg-pakgreen-500 hover:bg-pakgreen-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform active:scale-95 duration-200 border-2 border-white">
+            <i class="fa-solid fa-list-check text-lg"></i>
+        </button>
+    </div>
+
+    <header class="relative bg-white border-b border-slate-100 overflow-hidden py-10 sm:py-16">
+        <!-- Abstract background accent colors -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#006633" stroke-width="1"/>
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
+                Master Pakistan's <span class="text-pakgreen-500 italic font-medium">History</span>, <span class="text-pakgreen-600 italic font-medium">Geology</span> & <span class="text-pakgold-500 italic font-medium">Economics</span>
+            </h2>
+            <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                Explore comprehensive chapter-wise summaries, past-paper evaluation frameworks, and high-yield flashcards covering the full Cambridge <strong class="text-pakgreen-600">0448</strong> Pakistan Studies syllabus.
+            </p>
+
+            <!-- Comprehensive Search Bar -->
+            <div class="mt-8 max-w-2xl mx-auto">
+                <div class="relative flex items-center">
+                    <div class="absolute left-4 text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </div>
+                    <input type="text" id="search-input" onkeyup="filterContent()" placeholder="Search terms, chapters, concepts (e.g. 'Balakot', 'Monsoon', 'Dams', '1947')..." class="w-full bg-slate-50 border-2 border-slate-200 text-slate-800 rounded-2xl py-4 pl-12 pr-16 focus:outline-none focus:border-pakgreen-500 focus:bg-white transition-all duration-200 placeholder:text-slate-400 font-medium text-sm sm:text-base shadow-sm">
+                    <button id="search-clear-btn" onclick="clearSearch()" class="absolute right-4 text-slate-400 hover:text-slate-600 transition-colors p-1 rounded-full hidden">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                
+                <!-- Custom attribution under search bar -->
+                <p class="text-xs text-slate-500 mt-3 font-semibold tracking-wide flex items-center justify-center space-x-1.5">
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-pakgold-500 animate-pulse"></span>
+                    <span>Made By Muhammad Maaz, From APSACS RYK.</span>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Navigation (YouTube style horizontal scroll - sticks to the very top) -->
+    <div class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 overflow-x-auto pb-1 -mx-2 px-2 scrollbar-none" id="categories-container">
+                <button onclick="selectCategory('all')" id="btn-all" class="category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-pakgreen-500 text-white shadow-md shadow-pakgreen-500/15">
+                    <i class="fa-solid fa-compass mr-1.5"></i> All Subjects
+                </button>
+                <button onclick="selectCategory('history')" id="btn-history" class="category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800">
+                    <i class="fa-solid fa-landmark mr-1.5"></i> History & Culture
+                </button>
+                <button onclick="selectCategory('geology')" id="btn-geology" class="category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800">
+                    <i class="fa-solid fa-mountain-sun mr-1.5"></i> Topography & Geology
+                </button>
+                <button onclick="selectCategory('politics')" id="btn-politics" class="category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800">
+                    <i class="fa-solid fa-building-columns mr-1.5"></i> Politics & State
+                </button>
+                <button onclick="selectCategory('economics')" id="btn-economics" class="category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800">
+                    <i class="fa-solid fa-chart-line mr-1.5"></i> Economics & Trade
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- Left Grid Panel (Moved to Left): Dynamic Cards & Summaries -->
+            <section class="lg:col-span-3">
+                
+                <!-- Search feedback & Results info -->
+                <div id="search-info" class="mb-6 hidden items-center justify-between bg-pakgreen-50/60 border border-pakgreen-100 rounded-2xl px-5 py-3">
+                    <span id="search-result-count" class="text-sm text-pakgreen-800 font-medium"></span>
+                    <button onclick="clearSearch()" class="text-xs text-pakgreen-600 hover:text-pakgreen-700 font-bold underline">Reset view</button>
+                </div>
+
+                <!-- Empty state when searching fails -->
+                <div id="no-results" class="hidden text-center py-16 bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+                    <div class="text-pakgold-500 text-4xl mb-3">
+                        <i class="fa-regular fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">No Revision Guides Found</h3>
+                    <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto">We couldn't find matches for your search query. Try broadening your keywords or clicking one of the predefined subjects above.</p>
+                </div>
+
+                <!-- Main dynamic cards grid -->
+                <div class="grid grid-cols-1 gap-8" id="chapters-grid">
+                    <!-- Javascript will inject syllabus cards here -->
+                </div>
+
+                <!-- Flashcards & Quick Practice Quiz Widget -->
+                <div class="mt-12 bg-white border-2 border-pakgold-200 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+                    <div class="absolute -right-12 -top-12 text-pakgold-200 opacity-20 pointer-events-none text-9xl">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 border-b border-slate-100 pb-4">
+                        <div>
+                            <span class="text-xs font-bold tracking-wider text-pakgold-600 uppercase">Self Evaluation</span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold text-slate-900 flex items-center space-x-2 mt-0.5">
+                                <i class="fa-solid fa-bolt text-pakgold-500"></i>
+                                <span>High-Yield Revision Flashcards</span>
+                            </h3>
+                        </div>
+                        <div class="mt-3 sm:mt-0 flex items-center space-x-1.5">
+                            <button onclick="prevFlashcard()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition-all">
+                                <i class="fa-solid fa-arrow-left text-sm"></i>
+                            </button>
+                            <span id="flashcard-counter" class="text-xs font-bold text-slate-500 px-2">1 / 5</span>
+                            <button onclick="nextFlashcard()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition-all">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Flashcard Card Display -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 min-h-[160px] flex flex-col justify-between transition-all duration-300" id="flashcard-box">
+                        <div class="space-y-3">
+                            <span class="inline-block bg-pakgreen-100 text-pakgreen-800 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md">Topic Question</span>
+                            <p id="flashcard-question" class="text-slate-800 font-medium sm:text-lg leading-relaxed"></p>
+                        </div>
+                        
+                        <!-- Toggle answer area -->
+                        <div class="mt-6 pt-4 border-t border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <button onclick="toggleAnswer()" class="bg-pakgreen-500 hover:bg-pakgreen-600 text-white font-medium text-xs px-4 py-2.5 rounded-xl transition-all inline-flex items-center space-x-1.5 self-start">
+                                <i class="fa-regular fa-eye"></i>
+                                <span id="answer-toggle-text">Show Exam Answer</span>
+                            </button>
+                            <p id="flashcard-answer" class="text-sm text-slate-600 font-normal italic hidden flex-1 pl-2 border-l-2 border-pakgold-500"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Sidebar: Revision Tracker checklist (Sticky on large screens, now placed on the Right) -->
+            <aside id="sidebar-tracker" class="lg:col-span-1 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm self-start lg:sticky lg:top-24 hidden lg:block transition-all duration-300">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                    <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center space-x-2">
+                        <i class="fa-solid fa-list-check text-pakgreen-500"></i>
+                        <span>Syllabus Checklist</span>
+                    </h3>
+                    <button onclick="resetTracker()" class="text-xs text-red-500 hover:text-red-600 font-semibold" title="Reset all checked items">
+                        Reset
+                    </button>
+                </div>
+                
+                <!-- Circular Progress Indicator -->
+                <div class="bg-pakgreen-50 border border-pakgreen-100 rounded-2xl p-4 mb-4 text-center">
+                    <span class="text-xs text-slate-500 font-semibold uppercase block mb-1">Your Progress</span>
+                    <span id="tracker-progress-text" class="text-3xl font-bold text-pakgreen-600">0%</span>
+                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden mt-2">
+                        <div id="tracker-progress-bar" class="bg-pakgreen-500 h-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-slate-500 mb-4">Check off topics as you complete them to track your revision status:</p>
+                
+                <!-- Dynamic Checkbox Container -->
+                <div class="space-y-2 max-h-[380px] overflow-y-auto pr-1" id="checklist-container">
+                    <!-- Javascript will inject checklist items here -->
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-100 text-center">
+                    <p class="text-[11px] text-slate-400">Progress saved securely in browser storage.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Drawer / Modal for Detailed Learning -->
+    <div id="notes-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Background overlay -->
+            <div onclick="closeModal('notes')" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+
+            <!-- Position center -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Panel -->
+            <div class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-t-8 border-pakgreen-500">
+                <div class="bg-white p-6 sm:p-8">
+                    <div class="flex items-start justify-between border-b border-slate-100 pb-4 mb-4">
+                        <div>
+                            <span id="modal-category" class="text-xs font-bold tracking-widest text-pakgold-600 uppercase">CATEGORY</span>
+                            <h3 class="text-2xl font-serif font-bold text-slate-900 mt-1" id="modal-title">Chapter Title</h3>
+                            <p class="text-sm text-slate-500 italic mt-0.5" id="modal-subtitle">Subtitle</p>
+                        </div>
+                        <button onclick="closeModal('notes')" class="text-slate-400 hover:text-slate-600 bg-slate-100 p-2 rounded-full transition-colors">
+                            <i class="fa-solid fa-xmark text-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Main Modal Body Content -->
+                    <div class="prose max-w-none text-slate-700 space-y-4" id="modal-content">
+                        <!-- Dynamic content loaded from data file -->
+                    </div>
+
+                    <!-- Exam Practice Box inside Modal -->
+                    <div class="mt-6 bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <div class="flex items-center space-x-2 text-pakgold-600 font-bold text-sm mb-2">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span>Cambridge Past-Paper Practice Question</span>
+                        </div>
+                        <p class="text-slate-800 font-semibold text-sm leading-relaxed" id="modal-exam-question"></p>
+                        <div class="mt-3 text-xs bg-white border border-slate-200 rounded-xl p-3">
+                            <span class="text-pakgreen-600 font-bold block mb-1">Mark Scheme Guidance:</span>
+                            <p class="text-slate-500 italic leading-relaxed" id="modal-mark-guidance"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 flex justify-end">
+                    <button onclick="closeModal('notes')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-5 py-2 rounded-xl text-sm transition-colors">
+                        Close Reader
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer for Revision checklist -->
+    <div id="mobile-tracker" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex items-center justify-between p-6 border-b border-slate-100">
+            <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center space-x-2">
+                <i class="fa-solid fa-list-check text-pakgreen-500"></i>
+                <span>Syllabus Checklist</span>
+            </h3>
+            <button onclick="toggleMobileTracker()" class="text-slate-400 hover:text-slate-600 bg-slate-100 p-2 rounded-full transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile circular progress indicator -->
+        <div class="p-6 bg-pakgreen-50 border-b border-slate-100">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs text-slate-500 font-bold uppercase">Revision Completion</span>
+                <span id="tracker-progress-text-mobile" class="text-lg font-bold text-pakgreen-600">0%</span>
+            </div>
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                <div id="tracker-progress-bar-mobile" class="bg-pakgreen-500 h-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="p-6 overflow-y-auto h-[calc(100vh-210px)] space-y-2.5" id="mobile-checklist-container">
+            <!-- Mobile checkboxes loaded dynamically -->
+        </div>
+        <div class="absolute bottom-0 inset-x-0 p-4 bg-slate-50 text-center border-t border-slate-200">
+            <button onclick="resetTracker(); toggleMobileTracker();" class="text-xs text-red-500 font-bold hover:underline">Reset All Progress</button>
+        </div>
+    </div>
+
+    <!-- Scripts & Core Interactions -->
+    <script>
+        // Core state configurations
+        let selectedCategoryState = 'all';
+        let currentFlashcardIndex = 0;
+        let revisedTrackerState = {};
+
+        // On document initial load
+        window.onload = function() {
+            loadSyllabusTracker();
+            renderChecklist();
+            renderChaptersGrid();
+            updateProgress();
+            renderFlashcard();
+        };
+
+        // Render Cards based on search/category matching
+        function renderChaptersGrid() {
+            const grid = document.getElementById('chapters-grid');
+            const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+            const searchInfo = document.getElementById('search-info');
+            const searchResultCount = document.getElementById('search-result-count');
+            const noResults = document.getElementById('no-results');
+
+            if (!grid) return;
+            grid.innerHTML = '';
+            
+            // Filter syllabus items safely
+            const filtered = SYLLABUS_DATA.filter(item => {
+                const itemCategory = item.category || '';
+                const itemTitle = item.title || '';
+                const itemSubtitle = item.subtitle || '';
+                const itemSummary = item.summary || '';
+                const itemChapter = item.chapterNum || '';
+                const itemPoints = item.keyPoints || [];
+
+                const matchesCategory = (selectedCategoryState === 'all' || itemCategory === selectedCategoryState);
+                
+                // Content searching
+                const matchesSearch = !searchVal || 
+                    itemTitle.toLowerCase().includes(searchVal) ||
+                    itemSubtitle.toLowerCase().includes(searchVal) ||
+                    itemSummary.toLowerCase().includes(searchVal) ||
+                    itemChapter.toLowerCase().includes(searchVal) ||
+                    itemPoints.some(pt => pt.toLowerCase().includes(searchVal));
+
+                return matchesCategory && matchesSearch;
+            });
+
+            // Adjust elements based on filters
+            if (searchVal) {
+                if (searchInfo) {
+                    searchInfo.classList.remove('hidden');
+                    searchInfo.classList.add('flex');
+                }
+                if (searchResultCount) {
+                    searchResultCount.innerHTML = `<i class="fa-solid fa-magnifying-glass mr-2 text-pakgreen-500"></i> Found <strong>${filtered.length}</strong> guide cards matching "<strong>${searchVal}</strong>"`;
+                }
+                const clearBtn = document.getElementById('search-clear-btn');
+                if (clearBtn) clearBtn.classList.remove('hidden');
+            } else {
+                if (searchInfo) {
+                    searchInfo.classList.add('hidden');
+                    searchInfo.classList.remove('flex');
+                }
+                const clearBtn = document.getElementById('search-clear-btn');
+                if (clearBtn) clearBtn.classList.add('hidden');
+            }
+
+            if (filtered.length === 0) {
+                if (noResults) noResults.classList.remove('hidden');
+                return;
+            } else {
+                if (noResults) noResults.classList.add('hidden');
+            }
+
+            // Build individual card markup with safety fallbacks
+            filtered.forEach(item => {
+                const itemId = item.id || 'unknown';
+                const isChecked = revisedTrackerState[itemId] ? 'checked' : '';
+                const card = document.createElement('article');
+                card.className = "chapter-card bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md flex flex-col md:flex-row";
+                
+                // Get visual badges
+                const categoryLabels = {
+                    history: { text: "History & Culture", icon: "fa-landmark", color: "bg-emerald-100 text-emerald-800" },
+                    geology: { text: "Topography", icon: "fa-mountain-sun", color: "bg-blue-100 text-blue-800" },
+                    politics: { text: "State & Politics", icon: "fa-building-columns", color: "bg-amber-100 text-amber-800" },
+                    economics: { text: "Economy & Trade", icon: "fa-chart-line", color: "bg-purple-100 text-purple-800" }
+                };
+                
+                const meta = categoryLabels[item.category] || { text: "Syllabus Topic", icon: "fa-book", color: "bg-slate-100 text-slate-800" };
+                const keyPointsList = item.keyPoints || [];
+                const keyDatesList = item.keyDates || [];
+
+                card.innerHTML = `
+                    <!-- Left: visual banner -->
+                    <div class="md:w-1/3 relative min-h-[220px] md:min-h-auto bg-slate-100">
+                        <img src="${item.image || ''}" alt="${item.title || 'Topic'}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/006633/ffffff?text=${encodeURIComponent(item.chapterNum || 'Syllabus')}'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
+                        
+                        <!-- Top left chip -->
+                        <div class="absolute top-4 left-4 flex flex-col space-y-1 items-start">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white ${meta.color.split(' ')[1] === 'text-emerald-800' ? 'bg-emerald-600' : 'bg-slate-800/80'} backdrop-blur-sm shadow-sm flex items-center space-x-1">
+                                <i class="fa-solid ${meta.icon}"></i>
+                                <span>${meta.text}</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content summary -->
+                    <div class="p-6 md:w-2/3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold text-pakgold-600 uppercase tracking-widest">${item.chapterNum || 'Chapter'} &bull; ${item.paper || ''}</span>
+                                
+                                <!-- Revise toggle indicator directly on card -->
+                                <label class="inline-flex items-center space-x-2 cursor-pointer bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 transition-colors">
+                                    <input type="checkbox" onchange="toggleTrackedItem('${itemId}')" ${isChecked} class="w-4 h-4 text-pakgreen-600 focus:ring-pakgreen-500 rounded border-slate-300">
+                                    <span class="text-xs font-semibold text-slate-600">${isChecked ? 'Completed' : 'Study state'}</span>
+                                </label>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold text-slate-900 hover:text-pakgreen-700 transition-colors pointer-events-none">${item.title || 'Untitled'}</h3>
+                            <p class="text-xs font-medium text-slate-500 mt-0.5">${item.subtitle || ''}</p>
+                            <p class="text-sm text-slate-600 mt-3 leading-relaxed">${item.summary || ''}</p>
+                            
+                            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                ${keyPointsList.slice(0, 4).map(pt => `
+                                    <div class="flex items-start text-xs text-slate-500">
+                                        <i class="fa-solid fa-circle-check text-pakgreen-500 mr-2 mt-0.5"></i>
+                                        <span>${pt}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Card Action Buttons -->
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                ${keyDatesList.slice(0, 2).map(kd => `
+                                    <span class="text-[10px] bg-pakgold-100 border border-pakgold-200 text-pakgold-700 font-bold px-2 py-1 rounded-lg">
+                                        <i class="fa-regular fa-clock mr-1"></i>${kd.date}: ${(kd.event || '').substring(0, 15)}...
+                                    </span>
+                                `).join('')}
+                            </div>
+                            <!-- FIXED px-4.5 spacing bug -> Changed to standard px-5 padding -->
+                            <button onclick="openNoteReader('${itemId}')" class="bg-pakgreen-500 hover:bg-pakgreen-600 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md shadow-pakgreen-500/10 hover:shadow-pakgreen-500/20 flex items-center space-x-1">
+                                <span>Study Notes</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Handle YouTube Chip selection clicks
+        function selectCategory(category) {
+            selectedCategoryState = category;
+            
+            // Toggle active visual states on category container
+            const chips = document.querySelectorAll('.category-chip');
+            chips.forEach(chip => {
+                chip.className = "category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800";
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "category-chip shrink-0 px-5 py-2 rounded-full font-medium text-sm bg-pakgreen-500 text-white shadow-md shadow-pakgreen-500/15";
+            }
+
+            renderChaptersGrid();
+        }
+
+        // Dynamic typing search interface filtering
+        function filterContent() {
+            renderChaptersGrid();
+        }
+
+        // Reset search field
+        function clearSearch() {
+            const searchInp = document.getElementById('search-input');
+            if (searchInp) searchInp.value = '';
+            renderChaptersGrid();
+        }
+    </script>
+
+    <script>
+        // Track completed sections locally inside browser
+        function loadSyllabusTracker() {
+            const saved = localStorage.getItem('pk_studies_revised');
+            if (saved) {
+                try {
+                    revisedTrackerState = JSON.parse(saved);
+                } catch (e) {
+                    revisedTrackerState = {};
+                }
+            } else {
+                revisedTrackerState = {};
+            }
+        }
+
+        function saveSyllabusTracker() {
+            localStorage.setItem('pk_studies_revised', JSON.stringify(revisedTrackerState));
+        }
+
+        // Render standard revision sidebar
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            const mobileContainer = document.getElementById('mobile-checklist-container');
+            
+            container.innerHTML = '';
+            mobileContainer.innerHTML = '';
+
+            SYLLABUS_DATA.forEach(item => {
+                const checked = revisedTrackerState[item.id] ? 'checked' : '';
+                const itemHtml = `
+                    <div class="flex items-start justify-between bg-slate-50 border border-slate-200/60 p-2.5 rounded-xl hover:bg-white hover:border-pakgreen-200 transition-colors">
+                        <label class="flex items-start space-x-3 cursor-pointer flex-1">
+                            <input type="checkbox" onchange="toggleTrackedItem('${item.id}')" ${checked} class="w-4.5 h-4.5 mt-0.5 text-pakgreen-600 focus:ring-pakgreen-500 border-slate-300 rounded">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 ${checked ? 'line-through text-slate-400' : ''}">${item.chapterNum}</h4>
+                                <p class="text-[10px] text-slate-500 line-clamp-1">${item.title}</p>
+                            </div>
+                        </label>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', itemHtml);
+                mobileContainer.insertAdjacentHTML('beforeend', itemHtml);
+            });
+        }
+
+        // Change complete state
+        function toggleTrackedItem(id) {
+            if (revisedTrackerState[id]) {
+                delete revisedTrackerState[id];
+            } else {
+                revisedTrackerState[id] = true;
+            }
+            saveSyllabusTracker();
+            updateProgress();
+            renderChecklist();
+            renderChaptersGrid();
+        }
+
+        // Calculate final percentages
+        function updateProgress() {
+            const total = SYLLABUS_DATA.length;
+            const current = Object.keys(revisedTrackerState).length;
+            const pct = total > 0 ? Math.round((current / total) * 100) : 0;
+
+            const progressBar = document.getElementById('tracker-progress-bar');
+            const progressText = document.getElementById('tracker-progress-text');
+            const progressBarMobile = document.getElementById('tracker-progress-bar-mobile');
+            const progressTextMobile = document.getElementById('tracker-progress-text-mobile');
+            
+            if (progressBar) progressBar.style.width = `${pct}%`;
+            if (progressText) progressText.innerText = `${pct}%`;
+            if (progressBarMobile) progressBarMobile.style.width = `${pct}%`;
+            if (progressTextMobile) progressTextMobile.innerText = `${pct}%`;
+        }
+
+        // Wipe tracked items
+        function resetTracker() {
+            revisedTrackerState = {};
+            saveSyllabusTracker();
+            updateProgress();
+            renderChecklist();
+            renderChaptersGrid();
+        }
+
+        function toggleMobileTracker() {
+            const el = document.getElementById('mobile-tracker');
+            if (el.classList.contains('translate-x-full')) {
+                el.classList.remove('translate-x-full');
+            } else {
+                el.classList.add('translate-x-full');
+            }
+        }
+    </script>
+
+    <script>
+        // Display notes viewer in high utility layout
+        function openNoteReader(id) {
+            const data = SYLLABUS_DATA.find(item => item.id === id);
+            if (!data) return;
+
+            document.getElementById('modal-category').innerText = data.paper;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-subtitle').innerText = data.subtitle;
+            document.getElementById('modal-content').innerHTML = data.detailedNotes;
+            
+            // Practice Questions
+            document.getElementById('modal-exam-question').innerText = data.pastPaperQuestion.question;
+            document.getElementById('modal-mark-guidance').innerText = data.pastPaperQuestion.markingScheme;
+
+            // Display
+            document.getElementById('notes-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal(type) {
+            document.getElementById(`${type}-modal`).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Flashcards state management
+        function renderFlashcard() {
+            const card = FLASHCARDS[currentFlashcardIndex];
+            document.getElementById('flashcard-question').innerText = card.question;
+            document.getElementById('flashcard-answer').innerText = card.answer;
+            document.getElementById('flashcard-answer').classList.add('hidden');
+            
+            // Clear visual action buttons
+            document.getElementById('answer-toggle-text').innerText = "Show Exam Answer";
+            document.getElementById('flashcard-counter').innerText = `${currentFlashcardIndex + 1} / ${FLASHCARDS.length}`;
+        }
+
+        function toggleAnswer() {
+            const ans = document.getElementById('flashcard-answer');
+            const txt = document.getElementById('answer-toggle-text');
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                txt.innerText = "Hide Answer";
+            } else {
+                ans.classList.add('hidden');
+                txt.innerText = "Show Exam Answer";
+            }
+        }
+
+        function nextFlashcard() {
+            currentFlashcardIndex = (currentFlashcardIndex + 1) % FLASHCARDS.length;
+            renderFlashcard();
+        }
+
+        function prevFlashcard() {
+            currentFlashcardIndex = (currentFlashcardIndex - 1 + FLASHCARDS.length) % FLASHCARDS.length;
+            renderFlashcard();
+        }
+    </script>
+
+    <!-- Premium Elegant Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-slate-100 pb-8">
+                <div>
+                    <div class="flex items-center space-x-2.5 text-pakgreen-500 font-serif font-bold text-lg">
+                        <i class="fa-solid fa-star-and-crescent text-xl"></i>
+                        <span>O - Level Pakistan Studies Guide</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 max-w-sm">An interactive virtual library meticulously built according to the Cambridge 0448 curriculum, serving quality study resources across historical and geographical domains.</p>
+                </div>
+                <div class="flex space-x-4 md:justify-center">
+                    <a href="https://www.cambridgeinternational.org" target="_blank" class="text-xs text-slate-500 hover:text-pakgreen-500 transition-colors font-medium">Cambridge Official</a>
+                    <span class="text-slate-300">|</span>
+                    <a href="#" onclick="openNoteReader('hist-01'); return false;" class="text-xs text-slate-500 hover:text-pakgreen-500 transition-colors font-medium">Sample Note</a>
+                </div>
+                <div class="md:text-right">
+                    <span class="inline-flex items-center space-x-1 px-3 py-1 bg-pakgreen-50 text-pakgreen-800 border border-pakgreen-100 rounded-full text-xs font-bold">
+                        <i class="fa-solid fa-circle text-[8px] text-emerald-500 animate-pulse mr-1.5"></i>
+                        <span>Ready for 2026/2027 Exams</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400">
+                <p>&copy; 2026 Pakistan Studies Revision Portal. Intended as an educational reference guide.</p>
+                <div class="mt-4 sm:mt-0 text-slate-300 flex space-x-4">
+                    <span>Designed with Emerald & Satin Gold accents</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        // Keep a copy attached globally so we can reload the instance in our customizer
+        window.n8nChatInstance = { createChat };
+
+        createChat({
+            webhookUrl: 'https://firebox123.app.n8n.cloud/webhook/33f3ce72-f174-4d97-ad0b-a98820ac2b9c/chat',
+            initialMessages: [
+                "Hi there!",
+                "I’m your dedicated study buddy, here to make learning easier and more engaging. ",
+                "Whether you need help understanding a complex topic, want to review your notes, or need a quick practice quiz, I’ve got you covered."
+            ],
+            i18n: {
+                en: {
+                    title: 'Study Buddy',
+                    subtitle: 'Your O-Level Assistant',
+                    inputPlaceholder: 'Type '
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
